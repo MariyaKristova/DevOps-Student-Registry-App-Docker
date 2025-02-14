@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('NPM Install') {
             steps {
-                sh 'npm install'
+                sh '/bin/sh -c "npm install"'
             }
         }
         stage('Run Integration Tests') {
             steps {
-                sh 'npm run test'
+                sh '/bin/sh -c "npm run test"'
             }
         }
     }
