@@ -1,15 +1,19 @@
 pipeline {
     agent any
 
+    environment {
+        PATH = "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    }
+
     stages {
         stage('NPM Install') {
             steps {
-                sh '/bin/sh -c "npm install"'
+                sh 'npm install'
             }
         }
         stage('Run Integration Tests') {
             steps {
-                sh '/bin/sh -c "npm run test"'
+                sh 'npm run test'
             }
         }
     }
